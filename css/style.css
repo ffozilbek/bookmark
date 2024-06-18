@@ -1,3 +1,31 @@
+:root {
+    --crimson-color: #FA5959;
+    --blue-color: #5267DF;
+    --light-gray-color: #F7F7F7;
+    --dark-blue-color: #242A45;
+    --text-blue-color: rgba(36, 42, 69, 0.5);
+}
+
+/* FONTS */
+@font-face {
+    font-family: 'Rubik';
+    src: url('../fonts/Rubik-Regular.woff2') format('woff2'),
+        url('../fonts/Rubik-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Rubik';
+    src: url('../fonts/Rubik-Medium.woff2') format('woff2'),
+        url('../fonts/Rubik-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 /* GLOBAL */
 html {
     box-sizing: border-box;
@@ -18,10 +46,11 @@ body {
     margin: 0;
     font-size: 16px;
     line-height: 1.5;
-    font-family: "Roboto","Arial",sans-serif;
+    font-family: "Rubik","Arial",sans-serif;
     flex-direction: column;
-    background-color: #fff;
-    color: #222;
+    font-weight: normal;
+    background-color: #F2F2F2;
+    color: var(--dark-blue-color);
 }
 
 img {
@@ -31,10 +60,73 @@ img {
 
 /* CONTAINER */
 .container {
-    max-width: 1200px;
+    max-width: 1140px;
     width: 100%;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
     margin-left: auto;
     margin-right: auto;
+}
+
+/* SITE HEADER */
+
+
+.header {
+    padding: 48px 0px;
+}
+.header__container {
+    display: flex;
+    align-items: center;
+}
+.header__logo {
+    width: 140px;
+    height: 25px;
+    margin-right: auto;
+}
+.logo {
+    cursor: pointer;
+    flex-shrink: 0;
+}
+.header__nav {
+    display: flex;
+    align-items: center;
+}
+.nav__list {
+    display: flex;
+    list-style: none;
+}
+.nav_item {
+    margin-right: 48px;
+}
+.nav__link {
+    text-decoration: none;
+    color: var(--dark-blue-color);
+    font-size: 13px;
+    line-height: 17px;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease;
+}
+.button {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+    border: 2px solid;
+    transition: background-color,color 0.3s ease;
+    font-weight: 500;
+}
+.button-red {
+    background-color: var(--crimson-color);
+    border-color: var(--crimson-color);
+    padding: 12px 34px;
+    font-size: 13px;
+    line-height: 17px;
+    letter-spacing: 1.5px;
+}
+.nav__link:hover {
+    color: var(--crimson-color);
+}
+.button-red:hover {
+    background-color: #fff;
+    color: var(--crimson-color);
 }
