@@ -464,7 +464,46 @@ main {
     outline: none;
     margin-right: 16px;
 }
-.button {
+
+/* SITE FOOTER */
+.footer {
+    background-color: var(--dark-blue-color);
+    color: #fff;
+    padding: 32px;
 }
-.button-red {
+.footer__container {
+    display: flex;
+    align-items: center;
+}
+.footer__logo {
+    margin-right: 63px;
+}
+.logo {
+}
+.footer__nav {
+    margin-right: auto;
+}
+.nav {
+}
+.nav__list {
+}
+.nav__item {
+}
+.footer__link {
+    color: #fff;
+}
+.footer__social-links {
+    display: flex;
+    align-items: center;
+}
+.footer__social-link {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+.footer__social-link:first-child {
+    margin-right: 40px;
+}
+.footer__social-link:hover {
+    color: var(--crimson-color);
 }
