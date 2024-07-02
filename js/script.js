@@ -1,6 +1,9 @@
-const elAccordionTabs = document.querySelectorAll(".faq-accordion__item");
+const elsAccordionTabs = document.querySelectorAll(".faq-accordion__item"),
+    elsTabLink = document.querySelectorAll(".js-tab-link"),
+    elsTabItem = document.querySelectorAll(".slider__item"),
+    elsSliderTabs = document.querySelectorAll(".slider-tab-wrapper");
 
-elAccordionTabs.forEach(e => {
+elsAccordionTabs.forEach(e => {
     const elAccordionView = e.querySelector(".accordion-item__view"),
         elAccordionInfo = e.querySelector(".accordion-item__info");
 
@@ -9,3 +12,18 @@ elAccordionTabs.forEach(e => {
         })
 
 });
+
+elsTabLink.forEach(e => {
+    const activeTabLink = document.querySelector(`#${e.href.split("#")[1]}`);
+    e.addEventListener("click", (evt)=> {
+        evt.preventDefault();
+        elsTabItem.forEach(elTabItem => {
+            elTabItem.classList.remove("slider__item--active");
+        })
+        elsSliderTabs.forEach(e=> {
+            e.classList.remove("slider-tab--active");
+        })
+        e.parentElement.classList.add("slider__item--active");
+        activeTabLink.classList.add("slider-tab--active");
+    })
+})
