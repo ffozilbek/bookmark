@@ -1,3 +1,9 @@
+const modifier = {
+    sliderItemActive: "slider__item--active",
+    sliderTabActive: "slider-tab-active",
+    accordionOpener: "accordion-item__info--open"
+}
+
 const elsAccordionTabs = document.querySelectorAll(".faq-accordion__item"),
     elsTabLink = document.querySelectorAll(".js-tab-link"),
     elsTabItem = document.querySelectorAll(".slider__item"),
@@ -18,12 +24,12 @@ elsTabLink.forEach(e => {
     e.addEventListener("click", (evt)=> {
         evt.preventDefault();
         elsTabItem.forEach(elTabItem => {
-            elTabItem.classList.remove("slider__item--active");
+            elTabItem.classList.remove(modifier.sliderItemActive);
         })
         elsSliderTabs.forEach(e=> {
-            e.classList.remove("slider-tab--active");
+            e.classList.remove(modifier.sliderTabActive);
         })
-        e.parentElement.classList.add("slider__item--active");
-        activeTabLink.classList.add("slider-tab--active");
+        e.parentElement.classList.add(modifier.sliderItemActive);
+        activeTabLink.classList.add(modifier.sliderTabActive);
     })
 })
