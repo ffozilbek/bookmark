@@ -312,7 +312,7 @@ main {
 }
 .slider-tab {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
 }
 #speedy-searching .slider-tab__img{
@@ -350,14 +350,15 @@ main {
 .extensions-cards__card:not(:last-child) {
     margin-right: 34px;
 }
-.extensions-cards__card:nth-child(2) {
+.extensions-cards__card:nth-child(3n+2) {
     margin-top: 40px;
 }
-.extensions-cards__card:nth-child(3) {
+.extensions-cards__card:nth-child(3n) {
     margin-top: 80px;
 }
 .card {
-    width: 280px;
+    width: 100%;
+    max-width: 280px;
     background-color: #fff;
     padding: 48px 24px 24px;
     text-align: center;
@@ -392,7 +393,7 @@ main {
     text-align: center;
     margin-bottom: 56px;
 }
-.faq-accordion__list {
+.faq-accordion {
     width: 100%;
     list-style: none;
     margin-bottom: 54px;
@@ -465,16 +466,46 @@ main {
     align-items: center;
     justify-content: center;
 }
+.cta-section__input-wrapper {
+    position: relative;
+}
 .cta-section__input {
     width: 300px;
-    padding: 10px 20px;
+    padding: 10px 40px 10px 16px;
     font-size: 14px;
     line-height: 28px;
     letter-spacing: 0.25px;
-    border: 0;
+    border: 2px solid transparent;
     border-radius: 5px;
     outline: none;
     margin-right: 16px;
+    position: relative;
+}
+.error-alert {
+    position: absolute;
+    font-size: 10px;
+    font-style: italic;
+    background-color: var(--crimson-color);
+    width: 300px;
+    font-weight: 500;
+    text-align: left;
+    padding: 6px 12px;
+    top: calc(100% - 4px);
+    border-radius: 0 0 5px 5px;
+    left: 0;
+}
+
+.cta-section__input:not(:focus):not(:placeholder-shown):invalid {
+    border-color: var(--crimson-color);
+    background-image: url("../img/error-disc.svg");
+    background-repeat: no-repeat;
+    background-position:  right 16px center;
+}
+
+.cta-section__input:focus + .error-alert,
+.cta-section__input:valid + .error-alert,
+.cta-section__input:placeholder-shown + .error-alert {
+    display: none;
 }
 
 /* SITE FOOTER */

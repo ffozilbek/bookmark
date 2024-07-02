@@ -14,7 +14,7 @@ elsAccordionTabs.forEach(e => {
 });
 
 elsTabLink.forEach(e => {
-    const activeTabLink = document.querySelector(`#${e.href.split("#")[1]}`);
+    const activeTabLink = document.querySelector(e.dataset.tabTarget);
     e.addEventListener("click", (evt)=> {
         evt.preventDefault();
         elsTabItem.forEach(elTabItem => {
