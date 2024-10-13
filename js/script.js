@@ -1,3 +1,11 @@
+const burger = document.querySelector(".burger"),
+    navbar = document.querySelector(".header__nav");
+
+    burger.addEventListener("click", ()=> {
+        navbar.classList.toggle("active");
+    })
+
+
 const modifier = {
     sliderItemActive: "slider__item--active",
     sliderTabActive: "slider-tab-active",
