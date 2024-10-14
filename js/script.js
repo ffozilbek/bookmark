@@ -1,8 +1,10 @@
 const burger = document.querySelector(".burger"),
-    navbar = document.querySelector(".header__nav");
+    navbar = document.querySelector(".header__nav"),
+    header = document.querySelector(".header");
 
     burger.addEventListener("click", ()=> {
         navbar.classList.toggle("active");
+        header.classList.toggle("active");
     })
 
 
